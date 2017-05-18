@@ -18,6 +18,9 @@ module.exports = {
       '', '.js', '.jsx'
     ],
     root: __dirname,
+    modulesDirectories: [
+      'node_modules', './app/components'
+    ],
     alias: {
       Main: 'app/components/Main.jsx',
       applicationStyles: 'app/styles/app.scss'
@@ -42,9 +45,7 @@ module.exports = {
     ]
   },
   sassLoader: {
-    includePaths: [
-      path.resolve(__dirname, './node_modules/foundation-sites/scss')
-    ]
+    includePaths: [path.resolve(__dirname, './node_modules/foundation-sites/scss')]
   },
   devtool: 'cheap-module-eval-source-map'
 }
