@@ -6,6 +6,13 @@ module.exports = {
     }
   },
   getTodos: function() {
-    return JSON.parse(localStorage.getItem('todos')) || [];
+    var stringTodos = localStorage.getItem('todos');
+    var todos = [];
+    try {
+      todos = JSON.parse(stringTodos);
+    } catch (error) {
+      
+    }
+    return todos instanceof Array ? todos : [];
   }
 };
