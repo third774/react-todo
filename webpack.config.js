@@ -23,7 +23,8 @@ module.exports = {
     ],
     alias: {
       Main: 'app/components/Main.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: 'app/styles/app.scss',
+      actions: 'app/actions/actions.jsx'
     }
   },
   module: {
