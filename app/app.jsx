@@ -7,10 +7,16 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var TodoApp = require('TodoApp');
 var actions = require('actions');
 var store = require('configureStore').configure();
+var todoApi = require('TodoApi');
 
 store.subscribe(() => {
-  console.log('New State', store.getState());
+  var state = store.getState();  
+  console.log('New State', state);
+  todoApi.setTodos(state.todos);
 });
+
+var initialTodos = todoApi.getTodos();
+store.dispatch(actions.addTodos(initialTodos));
 
 // App CSS
 require('applicationStyles')

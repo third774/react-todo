@@ -38,6 +38,25 @@ describe('reducers', () => {
       expect(res[0].text).toBe(action.text);
     });
 
+    it('should add an array of todos', () => {
+      var todos = [
+        {
+          id: 111,
+          text: 'anything',
+          completed: false,
+          createdAt: 123,
+          completedAt: undefined
+        }
+      ];
+      var action = {
+        type: 'ADD_TODOS',
+        todos
+      };
+      var res = reducers.todos(df([]), df(action));
+      expect(res.length).toBe(1);
+      expect(res[0]).toEqual(todos[0]);
+    });
+
     it('should set completed boolean true and update completedAt time if marking completed', () => {
       var todo = {
         id: 'aaowejfoaiwejfoiawj',

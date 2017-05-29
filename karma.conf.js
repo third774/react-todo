@@ -1,9 +1,17 @@
 var webpackConfig = require('./webpack.config');
 
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-    browsers: ['Chrome'],
+    browsers: [
+      'ChromeDebugging'
+    ],
+    customLaunchers: {
+      ChromeDebugging: {
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=9333']
+      }
+    },
     singleRun: true,
     frameworks: ['mocha'],
     files: [
