@@ -12,8 +12,6 @@ store.subscribe(() => {
   console.log('New State', store.getState());
 });
 
-store.dispatch(actions.addTodo('Walk the dog'));
-
 // App CSS
 require('applicationStyles')
 
